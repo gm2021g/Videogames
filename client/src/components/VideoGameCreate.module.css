@@ -1,0 +1,178 @@
+.create_lets_go {
+    color: black;
+    text-shadow: 0 0 30px #d38686, 0 0 30px #d38686, 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65);
+    font-size: 2.5rem;
+    font-family: monospace;
+}
+
+.create_home_container {
+    margin-top: 3rem;
+    margin-left: 1rem;
+    justify-content: center;
+}
+
+.create_container_form {
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+    margin-left: 18rem;
+    margin-right: 18rem;
+    justify-content: center;
+    background-color: #f3e0e0;
+    border-radius: 0.5rem;
+}
+
+.create_home {
+    text-decoration: none;
+    color: #d38686;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-family: monospace;
+    font-size: 1.7rem;
+}
+
+.create_form {
+    flex-direction: column;
+}
+
+.create_input {
+    width: 20rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    list-style: none;
+    outline: none;
+    border: none;
+}
+
+.create_error {
+    color: red;
+}
+
+.create_released_container {
+    margin-left: 1rem;
+    justify-content: center;
+}
+
+.create_released {
+    margin-left: -1rem;
+}
+
+.create_released_input {
+    width: 8rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+}
+
+.create_rating {
+    margin-left: 1.2rem;
+}
+
+.create_rating_input {
+    width: 3.7rem;
+    height: 1.8rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    color: black;
+}
+
+.create_genres_container {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    justify-content: center;
+}
+
+.create_genres {
+    margin-left: -1rem;
+}
+
+.create_genres_input {
+    width: 17rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+
+.create_platforms_container {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    justify-content: center;
+}
+
+.create_platforms {
+    margin-left: -1rem;
+}
+
+.create_platforms_input {
+    width: 16rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+.create {
+    margin-top: 2rem;
+    justify-content: center;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 3px solid;
+    border-color: rgb(2, 2, 56);
+    background-color: rgb(2, 2, 56);
+    color: white;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    font-family: monospace;
+}
+
+.create:hover {
+    color: #d38686;
+}
+
+.create_x_genre_container {
+    margin-top: 2rem;
+    margin-left: 30rem;
+    justify-content: center;
+    width: 20rem;
+}
+
+.create_x_genre {
+    margin-right: 1rem;
+
+}
+
+.create_x_genre_buttom {
+    border-radius: 0.3rem;
+    color: red;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.create_x_platform_container {
+    margin-top: 2rem;
+    margin-left: 30rem;
+    justify-content: center;
+    width: 20rem;
+}
+
+.create_x_platform {
+    margin-right: 1rem;
+}
+
+.create_x_platform_buttom {
+    border-radius: 0.3rem;
+    color: red;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

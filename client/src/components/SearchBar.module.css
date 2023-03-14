@@ -1,0 +1,29 @@
+.search_container {
+    position: relative;
+    margin-top: 2rem;
+    align-content: start;
+}
+
+.search {
+    width: 20rem;
+    outline: #f3e0e0 3px solid;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.search_button {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    outline: #f3e0e0 2px solid;
+    padding-left: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 15px;
+    border-radius: 0.5rem;
+    background-image: linear-gradient(40deg, #f3e0e0, #d38686);
+    color: white;
+}

@@ -1,0 +1,47 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 50 rem;
+    height: 25rem;
+    background-color: #f3e0e0;
+    border-radius: 10px;
+}
+
+.card_image {
+    border-radius: 10px;
+    border: rgb(4, 4, 74) 3px solid;
+    width: 15rem;
+    height: 12rem;
+    background-color: transparent;
+    transition: transform .2s;
+    margin-top: 1.7rem;
+}
+
+.card_image:hover {
+    border: #d5ad88 3px solid;
+    transform: scale(1.1);
+}
+
+.card_game {
+    text-align: center;
+    list-style: none;
+    font-family: monospace;
+}
+
+.card_name {
+    text-align: center;
+    color: black;
+    margin: 0.5rem;
+    font-family: monospace;
+    text-shadow: 0 0 30px #d38686, 0 0 30px #d38686, 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.card_genre {
+    text-align: center;
+    margin-top: 1rem;
+    color: black;
+    margin-top: 0rem;
+    font-family: monospace;
+    font-size: 1.3rem;
+}

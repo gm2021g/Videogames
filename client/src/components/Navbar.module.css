@@ -1,0 +1,49 @@
+.navbar_title {
+    display: inline-block;
+    font-size: 2rem;
+    text-shadow: 0 0 30px #d38686, 0 0 30px #d38686, 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65);
+    word-spacing: 0.1rem;
+    margin-top: -2rem;
+    padding-top: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: -20rem;
+}
+
+.navbar_container {
+    display: inline-block;
+    margin-left: 10rem;
+    text-align: center;
+}
+
+.select {
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    height: 1.5rem;
+    width: 8rem;
+    font-size: 17px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #f3e0e0;
+    border-radius: 0.3rem;
+    color: black;
+
+}
+
+.select:hover {
+    background-color: white;
+    opacity: 0.9;
+    font-weight: bold;
+
+}
+
+.button_create_videogame {
+    color: #f3e0e0;
+    justify-content: right;
+    margin-left: 5rem;
+    font-family: monospace;
+    font-size: 1.4rem;
+}

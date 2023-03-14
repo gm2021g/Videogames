@@ -1,0 +1,99 @@
+.detail_title_container {
+    justify-content: center;
+    text-align: center;
+}
+
+.detail_title {
+    color: black;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: none;
+    margin-left: 1rem;
+    text-shadow: 0 0 30px #d38686, 0 0 30px #d38686, 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65), 0 0 30px rgb(241, 129, 65);
+}
+
+.detail_container_form {
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+    margin-left: 18rem;
+    margin-right: 18rem;
+    justify-content: center;
+    background-color: #f3e0e0;
+    border-radius: 0.5rem;
+    font-family: monospace;
+}
+
+.detail_button_container {
+    margin-top: 3rem;
+    margin-left: -1rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.detail_button {
+    text-decoration: none;
+    color: goldenrod;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: lighter;
+    font-size: 15px;
+    outline: none;
+    border: none;
+}
+
+.detail_image {
+    justify-content: center;
+    margin-left: 2rem;
+    width: 400px;
+    height: 300px;
+}
+
+.detail_released {
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+    color: black;
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.detail_platforms {
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.detail_genres {
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+    color: black;
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.detail_rating {
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+    color: black;
+    font-family: monospace;
+    font-size: 1.5rem;
+}
+
+.detail_description {
+    justify-content: center;
+    text-align: center;
+    margin-left: 2rem;
+    color: black;
+    padding-left: 19%;
+    padding-right: 19%;
+    font-family: monospace;
+    font-size: 1.5rem;
+}

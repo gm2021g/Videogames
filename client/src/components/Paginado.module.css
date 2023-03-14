@@ -1,0 +1,29 @@
+.pag_pagination {
+    list-style-type: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+.pag_each {
+    border: 1px solid blue;
+    display: inline-block;
+    background-color: rgb(199, 199, 199);
+    padding: 2px;
+    font-family: monospace;
+    height: 22px;
+    width: 20px;
+    color: rgb(15, 3, 1);
+    font-size: 1.1rem;
+    border-radius: 6px;
+    margin-top: 2rem;
+}
+
+.pag_each:hover {
+    background-color: #f3e0e0;
+}
+
+span {
+    color: #f3e0e0;
+    font-size: 1.1rem;
+    font-family: monospace;
+}
