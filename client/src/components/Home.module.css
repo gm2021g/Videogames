@@ -5,25 +5,22 @@ body {
 .card_grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 270px);
-    gap: 40px;
-    padding: 40px;
+    gap: 3px;
+    padding: 8px;
     justify-content: center;
     transition: margin-left 0.3s 0.1s;
 }
 
 .create_container {
-
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-left: 1rem;
     justify-content: center;
-
 }
 
 .pagination {
     margin-bottom: 2rem;
     cursor: pointer;
 }
-
 
 .placeCards {
     display: flex;

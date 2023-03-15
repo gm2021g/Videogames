@@ -8,7 +8,7 @@ export default function Card({ id, image, name, genre }) {
             <div className={styles.card}>
                 <li className={styles.card_game}>
                     <Link to={'/videogames/' + id}>
-                        <img className={styles.card_image} src={image} alt={name} />
+                        <img className={styles.card_image} src={image} />
                     </Link>
                     <div className={styles.card_name}> <h3>{name}</h3> </div>
                     <div className={styles.card_genre}> <h5>{genre.map(e => { return e.name + ", " })}</h5> </div>

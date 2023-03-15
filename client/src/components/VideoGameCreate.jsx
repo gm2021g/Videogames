@@ -7,10 +7,10 @@ import styles from './VideoGameCreate.module.css';
 function validate(input) {
     let errors = {};
     if (!input.name.trim()) {
-        errors.name = 'Complete a name';
+        errors.name = 'Name is required';
     }
     if (!input.description.trim()) {
-        errors.description = 'Complete a description';
+        errors.description = 'Description is required';
     }
 
     return errors;
@@ -59,6 +59,12 @@ export default function VideogameCreate() {
 
     function handleSubmit(e) {
         e.preventDefault();
+        //valida campos del formulario
+        if (!input.name) { return alert('Name is required') }
+        if (!input.description) { return alert('Description is required') }
+        if (input.rating < 0 || input.rating > 5) {
+            return alert('Rating should be a number between 0-5')
+        }
         setErrors(
             validate({
                 ...input,
@@ -80,8 +86,7 @@ export default function VideogameCreate() {
                 platforms: [],
             })
         } else {
-            console.log(errors)
-            alert('ERROR: videogame not created ' + errors);
+            alert('ERROR: videogame not created ');
             return;
         }
     }
@@ -106,14 +111,13 @@ export default function VideogameCreate() {
         dispatch(getGenres());
     }, [dispatch]);
 
-
     return (
         <>
             <div className={styles.create_home_container} >
                 <Link className={styles.create_home} to='/home'>HOME</Link>
 
                 <div className={styles.create_container_form}>
-                    <h1 className={styles.create_lets_go}>Create Videogame</h1>
+                    <h1 className={styles.create_ready}>Create Videogame</h1>
                     <form className={styles.create_form} onSubmit={(e) => handleSubmit(e)}>
 
                         <div>
@@ -170,8 +174,6 @@ export default function VideogameCreate() {
                                 placeholder='0 to 5'
                                 type='number'
                                 value={input.rating}
-                                min={0}
-                                max={5}
                                 name='rating'
                                 onChange={(e) => handleChange(e)}
                             />

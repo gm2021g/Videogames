@@ -6,6 +6,7 @@ import Card from './Card';
 import styles from './Home.module.css';
 import Navbar from './Navbar';
 import Paginado from './Paginado';
+import Loader from './Loader';
 
 export default function Home() {
 
@@ -68,43 +69,49 @@ export default function Home() {
         setOrder(e.target.value);
     }
 
-    return (
-        <>
-            <div className={styles.create_container}>
-                <Navbar
-                    handleSort={handleSort}
-                    handleRating={handleRating}
-                    handleFilterCreated={handleFilterCreated}
-                    handleFilterGenre={handleFilterGenre}
-                />
-            </div>
+    if (!allVideoGames.length) {
+        return (<Loader />);
+    }
+    else
+        return (
+            <>
+                <div className={styles.create_container}>
+                    <Navbar
+                        handleSort={handleSort}
+                        handleRating={handleRating}
+                        handleFilterCreated={handleFilterCreated}
+                        handleFilterGenre={handleFilterGenre}
+                    />
+                </div>
+
+                <div className={styles.pagination}>
+                    <Paginado
+                        videogamesPerPage={videogamesPerPage}
+                        allVideoGames={allVideoGames.length} // length xq necesito un valor numerico
+                        paginado={paginado}
+                        currPage={currentPage}
+                    />
+                </div>
+
+                <div className={styles.placeCards}>
+                    {
+                        currentVideogames.map(g => {
+                            return (
+                                <ul className={styles.card_grid} key={g.id}>
+
+                                    <Card
+                                        id={g.id}
+                                        name={g.name}
+                                        image={g.image ? g.image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCsgPISuO1XFJO3fxKhWGx7l9DEvGeQ2BMtQ&usqp=CAU"}
+                                        genre={g.genres}
+                                    />
+                                </ul>
+                            )
+                        })
+                    }
+                </div >
 
 
-            <div className={styles.pagination}>
-                <Paginado
-                    videogamesPerPage={videogamesPerPage}
-                    allVideoGames={allVideoGames.length} // length xq necesito un valor numerico
-                    paginado={paginado}
-                    currPage={currentPage}
-                />
-            </div>
-
-            <div className={styles.placeCards}>
-                {
-                    currentVideogames.map(g => {
-                        return (
-                            <ul className={styles.card_grid} key={g.id}>
-                                <Card
-                                    id={g.id}
-                                    name={g.name}
-                                    image={g.image ? g.image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCsgPISuO1XFJO3fxKhWGx7l9DEvGeQ2BMtQ&usqp=CAU"}
-                                    genre={g.genres}
-                                />
-                            </ul>
-                        )
-                    })
-                }
-            </div >
-        </>
-    );
+            </>
+        );
 }

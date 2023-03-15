@@ -1,13 +1,12 @@
 .search_container {
     position: relative;
-    margin-top: 2rem;
     align-content: start;
 }
 
 .search {
     width: 20rem;
     outline: #f3e0e0 3px solid;
-    height: 2rem;
+    height: 1.1rem;
     border-radius: 0.5rem;
     border: none;
     text-align: center;

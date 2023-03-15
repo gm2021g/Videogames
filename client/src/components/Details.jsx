@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getDetails } from '../actions/index.js';
 import { useEffect } from "react";
 import styles from './Details.module.css';
-
+import Loader from './Loader';
 
 export default function Details() {
     const dispatch = useDispatch();
@@ -19,30 +19,37 @@ export default function Details() {
         dispatch(getDetails());
     }
 
-    return (
-        <div >
-            <div className={styles.detail_button_container}>
-                <Link to={'/home'} onClick={handleReset}>
-                    <button className={styles.detail_button}>HOME</button>
-                </Link>
-                <br />
-                <div className={styles.detail_container_form}>
-                    <h1 className={styles.detail_title}> {detail.name}</h1>
-                    <h2> <b>ID:</b>{detail.id}</h2>
-                    <img className={styles.detail_image} src={detail.image} alt='not found' />
-                    <p className={styles.detail_genres}><b>Genres:</b> {detail.genres} </p>
+    if (Object.entries(detail).length === 0) {
+        return (<Loader />);
+    }
+    else
+        return (
+            <div >
+                <div>
+                    <Link to={'/home'} onClick={handleReset}>
+                        <button className={styles.detail_button}>HOME</button>
+                    </Link>
+                    <br />
+                    <div className={styles.detail_container_form}>
+                        <h1 className={styles.detail_title}> {detail.name} </h1>
 
-                    <div className={styles.detail_title_container}>
-                        <p className={styles.detail_description}><b>Description:</b> {detail.description}</p>
-                        <p className={styles.detail_rating}><b>Rating:</b> {detail.rating}</p>
-                        <p className={styles.detail_released}><b>Released:</b> {detail.released}</p>
+                        <img className={styles.detail_image} src={detail.image} />
+
+                        <div>
+                            <p className={styles.detail_genres}><b>Genres:</b> {detail.genres} </p>
+                            <p className={styles.detail_rating}> <b>ID:</b>{detail.id}</p>
+                            <p className={styles.detail_rating}><b>Rating:</b> {detail.rating}</p>
+                            <p className={styles.detail_released}><b>Released:</b> {detail.released}</p>
+                            <p className={styles.detail_platforms}> <b>Platforms:</b> {detail.platforms} </p>
+                        </div>
+
+                        <div className={styles.detail_description_form}>
+                            <p className={styles.detail_description}> {detail.description}</p>
+                        </div>
+
                     </div>
-
-                    <p className={styles.detail_platforms}>
-                        <b>Platforms:</b> {detail.platforms} </p>
 
                 </div>
             </div>
-        </div>
-    )
+        )
 }
