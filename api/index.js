@@ -23,6 +23,5 @@ const { conn } = require('./src/db.js');
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => { // force en true si se baja el servidor borra estructuras y los datos de las tablas en la BD
   server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });

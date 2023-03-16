@@ -93,8 +93,6 @@ export function getDetails(id) {
         return async function (dispatch) {
             try {
                 const detail = await axios.get(`http://localhost:3001/videogames/${id}`);
-                console.log('***************')
-                console.log(detail)
                 dispatch({
                     type: GET_DETAILS,
                     payload: detail.data

@@ -18,26 +18,26 @@ export default function Navbar({ handleFilterGenre, handleFilterCreated, handleR
             </div>
 
             <select className={styles.select} onChange={(e) => handleSort(e)}>
-                <option>Option</option>
+                <option value='Asc'>Name Order</option>
                 <option value='Asc'>A-Z</option>
                 <option value='Desc'>Z-A</option>
             </select>
 
             <select className={styles.select} onChange={(e) => handleRating(e)}>
-                <option>Rating</option>
+                <option value="Top">Rating Order</option>
                 <option value="Top">Rating Top</option>
                 <option value="Low">Rating Low</option>
             </select>
 
             <select className={styles.select} onChange={(e) => handleFilterCreated(e)}>
-                <option>Games</option>
+                <option value='All'>Games Filter</option>
                 <option value='All'>All</option>
-                <option value='Created'>Created</option>
+                <option value='Created'>Created DB</option>
                 <option value='Api'>Existent</option>
             </select>
 
             <select className={styles.select} onChange={(e) => handleFilterGenre(e)}>
-                <option>Genres</option>
+                <option value='All'>Genres Filter</option>
                 <option value='All'>All</option>
 
                 {allGenre.map((genre) => (

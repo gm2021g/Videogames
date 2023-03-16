@@ -7,7 +7,7 @@ import styles from './Details.module.css';
 import Loader from './Loader';
 
 export default function Details() {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); // trae datos del est. global del reducer
     const { id } = useParams();
 
     useEffect(() => {
@@ -15,9 +15,11 @@ export default function Details() {
     }, [dispatch]);
 
     const detail = useSelector((state) => state.detail);
-    function handleReset() {
-        dispatch(getDetails());
-    }
+
+    /*   function handleReset() {
+           dispatch(getDetails()); // llama sin el id
+       }
+   */
 
     if (Object.entries(detail).length === 0) {
         return (<Loader />);
@@ -26,7 +28,7 @@ export default function Details() {
         return (
             <div >
                 <div>
-                    <Link to={'/home'} onClick={handleReset}>
+                    <Link to={'/home'} >
                         <button className={styles.detail_button}>HOME</button>
                     </Link>
                     <br />

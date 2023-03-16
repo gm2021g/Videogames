@@ -17,7 +17,7 @@ function validate(input) {
 }
 
 export default function VideogameCreate() {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();// trae datos del est. global del reducer
     const genre = useSelector((state) => state.genres);
     const platform = useSelector((state) => state.platforms)
     const [errors, setErrors] = useState({});
@@ -114,7 +114,7 @@ export default function VideogameCreate() {
     return (
         <>
             <div className={styles.create_home_container} >
-                <Link className={styles.create_home} to='/home'>HOME</Link>
+                <Link className={styles.create_home} to={'/home'} >HOME</Link>
 
                 <div className={styles.create_container_form}>
                     <h1 className={styles.create_ready}>Create Videogame</h1>

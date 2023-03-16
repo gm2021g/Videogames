@@ -19,8 +19,8 @@ export default function Home() {
     const indexOfLastVideogame = currentPage * videogamesPerPage; // indice el ultimo VG
     const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage; // indice del primer VG 
     const currentVideogames = allVideoGames.slice(indexOfFirstVideogame, indexOfLastVideogame); // guarda todos los VG que tengo en mi pagina actual
-    // p1 -- 0 -- 6
-    // p2 -- 7 -- 13
+    // p1 -- 0 -- 15
+    // p2 -- 16 -- 31
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
@@ -46,21 +46,6 @@ export default function Home() {
         setOrder(e.target.value);
     };
 
-    function handleFilterGenre(e) {
-        e.preventDefault();
-        dispatch(filterVideogamesByGenre(e.target.value));
-        setCurrentPage(1);
-        //  setOrder(e.target.value);
-    };
-
-    // Filtra por creado en la DB o si es de la API
-    function handleFilterCreated(e) {
-        e.preventDefault();
-        dispatch(filterCreated(e.target.value));
-        setCurrentPage(1);
-        //   setOrder(e.target.value);
-    };
-
     // Ordenamiento por Rating 
     function handleRating(e) {
         e.preventDefault();
@@ -68,6 +53,19 @@ export default function Home() {
         setCurrentPage(1);
         setOrder(e.target.value);
     }
+
+    function handleFilterGenre(e) {
+        e.preventDefault();
+        dispatch(filterVideogamesByGenre(e.target.value));
+        setCurrentPage(1);
+    };
+
+    // Filtra por creado en la DB o si es de la API
+    function handleFilterCreated(e) {
+        e.preventDefault();
+        dispatch(filterCreated(e.target.value));
+        setCurrentPage(1);
+    };
 
     if (!allVideoGames.length) {
         return (<Loader />);
