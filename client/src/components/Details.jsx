@@ -16,10 +16,9 @@ export default function Details() {
 
     const detail = useSelector((state) => state.detail);
 
-    /*   function handleReset() {
-           dispatch(getDetails()); // llama sin el id
-       }
-   */
+    function handleReset() {
+        dispatch(getDetails()); // llama sin el id
+    }
 
     if (Object.entries(detail).length === 0) {
         return (<Loader />);
@@ -28,7 +27,7 @@ export default function Details() {
         return (
             <div >
                 <div>
-                    <Link to={'/home'} >
+                    <Link to={'/home'} onClick={handleReset}>
                         <button className={styles.detail_button}>HOME</button>
                     </Link>
                     <br />

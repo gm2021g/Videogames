@@ -1,6 +1,6 @@
 import {
     GET_VIDEOGAMES, GET_GENRES, FILTER_BY_GENRE, FILTER_CREATED, GET_DETAILS,
-    ORDER_BY_NAME, GET_VIDEOGAME_NAME, ORDER_BY_RATING, POST_VIDEOGAME, GET_PLATFORMS
+    ORDER_BY_NAME, GET_VIDEOGAME_NAME, ORDER_BY_RATING, POST_VIDEOGAME, GET_PLATFORMS, INIT_FILTERS
 } from "../action-types";
 
 const initialState = {
@@ -9,7 +9,9 @@ const initialState = {
     genres: [],
     platforms: [],
     videodetails: [],
-    detail: {}
+    detail: {},
+    filter_created: [],
+    filter_genre: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -18,7 +20,8 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 videogames: action.payload,
-                allVideogames: action.payload //esto es para q los filtros siempre empiecen sobre todos y no sobre el filtro aplicado
+                allVideogames: action.payload, //esto es para q los filtros siempre empiecen sobre todos y no sobre el filtro aplicado
+
             }
 
         case GET_GENRES:
@@ -27,30 +30,73 @@ const reducer = (state = initialState, action) => {
                 genres: action.payload
             }
 
+        /*  case INIT_FILTERS:
+              return {
+                  ...state,
+                  filter_genre: 'All',
+                  filter_created: 'All'
+              }
+  */
+        //*** */
         case FILTER_BY_GENRE:
             const allGames = state.allVideogames;
-            const genresFiltered = action.payload === 'All' ?
+            let genresFiltered = action.payload === 'All' ?
                 allGames
                 : allGames.filter(g => {
                     return g.genres.find(g => {
                         return g.name === action.payload;
                     })
                 });
+            //
+            const current_estate = state.filter_created;
+            if (current_estate.length !== 0) {
+                //console.log(" current_estate " + current_estate)
+                if (current_estate === 'Created')
+                    genresFiltered = genresFiltered.filter(el => el.createdInDB)
+                else if (current_estate !== 'All')
+                    genresFiltered = genresFiltered.filter(el => !el.createdInDB);
+            }
+            //
             return {
                 ...state,
-                videogames: genresFiltered
+                videogames: genresFiltered,
+                filter_genre: action.payload //*** */
             };
 
+
+        //*** */
         case FILTER_CREATED:
-            const filterCreated = action.payload === 'Created' ?
-                state.allVideogames.filter(el => el.createdInDB)
-                : state.allVideogames.filter(el => !el.createdInDB);
+            let filterCreated;
 
+            if (action.payload === 'All') {
+                filterCreated = state.allVideogames;
+            }
+            else
+                filterCreated = action.payload === 'Created' ?
+                    state.allVideogames.filter(el => el.createdInDB)
+                    : state.allVideogames.filter(el => !el.createdInDB);
+
+            //
+            //  console.log('   state.filter_genre   ' + state.filter_genre)
+            const current_estate_genre = state.filter_genre;
+            if (current_estate_genre.length !== 0) {
+                //   console.log('   state.filter_genre  entro  ')
+                if (current_estate_genre !== 'All')
+                    filterCreated = filterCreated.filter(g => {
+                        return g.genres.find(g => {
+                            return g.name === current_estate_genre;
+                        })
+                    });
+            }
+            //
             return {
                 ...state,
-                videogames: action.payload === 'All' ? state.allVideogames
-                    : filterCreated
+                // videogames: action.payload === 'All' ? state.allVideogames
+                //     : filterCreated,
+                videogames: filterCreated,
+                filter_created: action.payload  //*** */
             };
+
 
 
         case GET_VIDEOGAME_NAME: //searchbar

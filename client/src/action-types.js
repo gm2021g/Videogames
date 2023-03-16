@@ -7,4 +7,5 @@ export const ORDER_BY_RATING = "ORDER_BY_RATING";
 export const GET_VIDEOGAME_NAME = "GET_VIDEOGAME_NAME";
 export const POST_VIDEOGAME = "POST_VIDEOGAME";
 export const GET_PLATFORMS = "GET_PLATFORMS";
-export const GET_DETAILS = "GET_DETAILS"; 
+export const GET_DETAILS = "GET_DETAILS";
+export const INIT_FILTERS = "INIT_FILTERS"; 

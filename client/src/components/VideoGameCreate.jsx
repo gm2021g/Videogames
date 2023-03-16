@@ -44,17 +44,22 @@ export default function VideogameCreate() {
     }
 
     function handleSelectGenre(e) {
-        setInput({
-            ...input,
-            genres: [...input.genres, e.target.value],
-        })
+        if (!input.genres.includes(e.target.value)) {
+            setInput({
+                ...input,
+                genres: [...input.genres, e.target.value],
+            })
+        }
     }
 
     function handleSelectPlatform(e) {
-        setInput({
-            ...input,
-            platforms: [...input.platforms, e.target.value]
-        })
+        if (!input.platforms.includes(e.target.value)) {
+            setInput(
+                {
+                    ...input,
+                    platforms: [...input.platforms, e.target.value]
+                })
+        }
     };
 
     function handleSubmit(e) {
@@ -109,6 +114,7 @@ export default function VideogameCreate() {
 
     useEffect(() => {
         dispatch(getGenres());
+        // dispatch(initFilters('All'));
     }, [dispatch]);
 
     return (

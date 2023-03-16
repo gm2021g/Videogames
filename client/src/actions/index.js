@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {
     GET_VIDEOGAMES, GET_GENRES, FILTER_BY_GENRE, GET_PLATFORMS, GET_DETAILS,
-    FILTER_CREATED, ORDER_BY_NAME, ORDER_BY_RATING, GET_VIDEOGAME_NAME
+    FILTER_CREATED, ORDER_BY_NAME, ORDER_BY_RATING, GET_VIDEOGAME_NAME, INIT_FILTERS
 } from "../action-types";
 
 // Obtener los videogames desde la API y desde la Base de datos
@@ -55,7 +55,14 @@ export function orderByRating(payload) {
         payload
     }
 }
-
+/*
+export function initFilters(payload) {
+    return {
+        type: INIT_FILTERS,
+        payload
+    }
+}
+*/
 //Buscar videogames por nombre
 export function getVideogameName(name) {
     return async function (dispatch) {

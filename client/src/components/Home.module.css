@@ -30,6 +30,22 @@ body {
     justify-content: space-around;
 }
 
+.reload_container {
+    margin-left: 2rem;
+    margin-right: -30rem;
+    margin-top: 1rem;
+    font-family: monospace;
+    font-size: 1rem;
+    border-radius: 10px;
+    width: 5rem;
+    height: 2rem;
+}
+
+.reload_container:hover {
+    border: #d5ad88 3px solid;
+    transform: scale(1.1);
+}
+
 /* Responsive layout */
 @media (max-width: 800px) {
     .placeCards {

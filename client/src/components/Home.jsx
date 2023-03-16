@@ -31,11 +31,11 @@ export default function Home() {
         dispatch(getVideogames());
     }, [dispatch]);
 
-    /*function handleClick(e) {
+    function handleClick(e) {
         e.preventDefault();
         dispatch(getVideogames());
     }
-    */
+
     const [order, setOrder] = useState('');
 
     //dispatch del ordenamiento ascendente y descendente
@@ -82,6 +82,12 @@ export default function Home() {
                     />
                 </div>
 
+                <div>
+                    <button className={styles.reload_container} onClick={(e) => { handleClick(e) }}>
+                        RELOAD
+                    </button>
+                </div>
+
                 <div className={styles.pagination}>
                     <Paginado
                         videogamesPerPage={videogamesPerPage}
@@ -95,21 +101,19 @@ export default function Home() {
                     {
                         currentVideogames.map(g => {
                             return (
-                                <ul className={styles.card_grid} key={g.id}>
+                                <ul className={styles.card_grid} key={g?.id}>
 
                                     <Card
-                                        id={g.id}
-                                        name={g.name}
-                                        image={g.image ? g.image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCsgPISuO1XFJO3fxKhWGx7l9DEvGeQ2BMtQ&usqp=CAU"}
-                                        genre={g.genres}
+                                        id={g?.id}
+                                        name={g?.name}
+                                        image={g?.image ? g?.image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCsgPISuO1XFJO3fxKhWGx7l9DEvGeQ2BMtQ&usqp=CAU"}
+                                        genre={g?.genres}
                                     />
                                 </ul>
                             )
                         })
                     }
                 </div >
-
-
             </>
         );
 }
